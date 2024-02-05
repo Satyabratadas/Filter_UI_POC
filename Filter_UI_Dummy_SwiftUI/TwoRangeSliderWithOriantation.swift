@@ -41,7 +41,7 @@ struct TwoRangeSliderWithOriantation: View {
         ZStack{
             RoundedRectangle(cornerRadius: 25)
                 .fill(Color.white)
-                .frame(width: screenWidth, height: 100)
+                .frame( height: 100)
             VStack(alignment: .leading, content: {
                 HStack(content: {
                     Text("PRICE")
@@ -69,7 +69,7 @@ struct SliderView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: slider.lineWidth)
             .fill(Color.gray.opacity(0.2))
-            .frame(width: screenWidth, height: slider.lineWidth)
+            .frame( height: slider.lineWidth)
             .overlay(
                 ZStack {
                     //Path between both handles

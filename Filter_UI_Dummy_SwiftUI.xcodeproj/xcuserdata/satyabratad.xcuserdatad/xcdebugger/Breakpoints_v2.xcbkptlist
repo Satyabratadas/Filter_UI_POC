@@ -324,17 +324,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "349D8D75-ED86-48C1-9326-6C0AE26E4F73"
+            uuid = "A6046DE0-DAD0-46CE-9425-76462F02D51C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Filter_UI_Dummy_SwiftUI/filterViewTry.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A6046DE0-DAD0-46CE-9425-76462F02D51C - b802c452be69c6c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(Filter_UI_Dummy_SwiftUI.FilterOptionListIphoneLandScape, Filter_UI_Dummy_SwiftUI.ApplyBtnViewIphoneLandScape)&gt;, SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, Filter_UI_Dummy_SwiftUI.FilterOptionListIphone)&gt;, SwiftUI.TupleView&lt;(SwiftUI.Text, Filter_UI_Dummy_SwiftUI.FilterOptionListIphone)&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, Filter_UI_Dummy_SwiftUI.FilterOptionListIphone)&gt;, SwiftUI.TupleView&lt;(SwiftUI.Text, Filter_UI_Dummy_SwiftUI.FilterOptionListIphone)&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, Filter_UI_Dummy_SwiftUI.FilterOptionListIphone)&gt;, SwiftUI.TupleView&lt;(SwiftUI.Text, Filter_UI_Dummy_SwiftUI.FilterOptionListIphone)&gt;&gt;&gt;, Filter_UI_Dummy_SwiftUI.ApplyBtnViewIphone)&gt;&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onPreferenceChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PreferenceKey, &#x3c4;_1_0.Value: Swift.Equatable&gt;(_: &#x3c4;_1_0.Type, perform: (&#x3c4;_1_0.Value) -&gt; ()) -&gt; some&gt;&gt;.0 in Filter_UI_Dummy_SwiftUI.FilterViewForIphone.body.getter : some"
+                  moduleName = "Filter_UI_Dummy_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satyabratad/Satyabrata_Workspace/Filter_UI_POC/Filter_UI_Dummy_SwiftUI/filterViewTry.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1168">
+               </Location>
+               <Location
+                  uuid = "A6046DE0-DAD0-46CE-9425-76462F02D51C - b802c452be69c6c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(Filter_UI_Dummy_SwiftUI.FilterOptionListIphoneLandScape, Filter_UI_Dummy_SwiftUI.ApplyBtnViewIphoneLandScape)&gt;, SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, Filter_UI_Dummy_SwiftUI.FilterOptionListIphone)&gt;, SwiftUI.TupleView&lt;(SwiftUI.Text, Filter_UI_Dummy_SwiftUI.FilterOptionListIphone)&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, Filter_UI_Dummy_SwiftUI.FilterOptionListIphone)&gt;, SwiftUI.TupleView&lt;(SwiftUI.Text, Filter_UI_Dummy_SwiftUI.FilterOptionListIphone)&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, Filter_UI_Dummy_SwiftUI.FilterOptionListIphone)&gt;, SwiftUI.TupleView&lt;(SwiftUI.Text, Filter_UI_Dummy_SwiftUI.FilterOptionListIphone)&gt;&gt;&gt;, Filter_UI_Dummy_SwiftUI.ApplyBtnViewIphone)&gt;&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onPreferenceChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PreferenceKey, &#x3c4;_1_0.Value: Swift.Equatable&gt;(_: &#x3c4;_1_0.Type, perform: (&#x3c4;_1_0.Value) -&gt; ()) -&gt; some&gt;&gt;.0 in Filter_UI_Dummy_SwiftUI.FilterViewForIphone.body.getter : some"
+                  moduleName = "Filter_UI_Dummy_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satyabratad/Satyabrata_Workspace/Filter_UI_POC/Filter_UI_Dummy_SwiftUI/filterViewTry.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1080">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

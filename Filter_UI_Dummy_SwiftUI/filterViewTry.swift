@@ -12,6 +12,8 @@ struct PresentFilterView: View {
  
     var body: some View {
             if isCurrentDeviceIpad(){
+                FilterOptionListIphoneLandScape()
+                ApplyBtnViewIphoneLandScape()
                 
             }else{
                 FilterViewForIphone()
@@ -22,55 +24,31 @@ struct PresentFilterView: View {
 
 struct FilterViewForIphone: View {
     @State private var landscapeOrientation = false
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @State private var sizeChanged = false
     var body: some View {
         GeometryReader { geometry in
-            let screenWidth = horizontalSizeClass == .compact ? geometry.size.height : geometry.size.width
-            
             VStack {
-                if landscapeOrientation{
-                    FilterOptionListIphoneLandScape(screenWidth: screenWidth)
+                if geometry.size.width > geometry.size.height{
+                    FilterOptionListIphoneLandScape()
                     ApplyBtnViewIphoneLandScape()
-                        
-                    
                 }else{
-                    if geometry.size.width <= 320 {
-                        Text("iPhone SE (1st generation)")
-                        FilterOptionListIphone(screenWidth: 280)
-                    } else if geometry.size.width <= 375 {
-                        Text("iPhone SE (2nd generation), iPhone 8, 7, 6s, 6, iPhone XS, X, 11 Pro")
-                        FilterOptionListIphone(screenWidth: 300)
-                    } else if geometry.size.width <= 390 {
-                        Text("iPhone 12, 12 Pro")
-                        FilterOptionListIphone(screenWidth: 310)
-                    } else if geometry.size.width <= 414 {
-                        Text("iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus, iPhone XR, 11, iPhone XS Max, 11 Pro Max")
-                        FilterOptionListIphone(screenWidth: 300)
-                    } else if geometry.size.width <= 428 {
-                        Text("iPhone 12 Pro Max")
-                        FilterOptionListIphone(screenWidth: 310)
-                    } else {
-                        Text("Unknown iPhone model or future models")
-                        FilterOptionListIphone(screenWidth: 350)
-                    }
                     
+                    FilterOptionListIphone()
                     ApplyBtnViewIphone()
-                    
-                    
                 }
             }
             .padding(EdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5))
-            .onAppear {
-                landscapeOrientation = geometry.size.width > geometry.size.height
-            }
-            .onChange(of: geometry.size) { oldValue, newValue in
-                landscapeOrientation = geometry.size.width > geometry.size.height
-            }
         }
         
     }
-    func checkDifferentDevices(geometry: GeometryProxy){
-        
+    
+}
+
+struct SizePreferenceKey: PreferenceKey {
+    static var defaultValue: CGSize = .zero
+    
+    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+        value = nextValue()
     }
 }
 
@@ -100,7 +78,7 @@ struct ApplyBtnViewIphoneLandScape: View {
                 
             }label: {
                 Text("Apply")
-                    .frame(width: UIScreen.screenWidth * 0.2,height: 40)
+                    .frame(width: UIScreen.screenWidth * 0.23,height: 40)
                     .foregroundColor(.white)
             }
             .background(Color.red)
@@ -113,9 +91,8 @@ struct ApplyBtnViewIphoneLandScape: View {
 
 struct FilterOptionListIphone :View{
     
-    @State private var minPrice: Double = 0
-    @State private var maxPrice: Double = 5000
     @Environment(\.presentationMode) var presentationMode
+    @State private var listWidth: CGFloat = 0
     
     let categories = ["Acrylic Clocks", "Acrylic Medals", "Banners", "Bookmarks",
                              "Canvas Photo Frame", "Cap based Lid Water Bottles",
@@ -128,12 +105,8 @@ struct FilterOptionListIphone :View{
     
     let color = ["Red","Green","Blue"]
     
-    let size = ["Large","Medium","Small"]
-    
-    let screenWidth: CGFloat  //310
-    init(screenWidth: CGFloat) {
-        self.screenWidth = screenWidth
-    }
+    let size = ["Large","Medium","Small"] 
+   
     var body: some View {
         List{
             HStack{
@@ -153,9 +126,18 @@ struct FilterOptionListIphone :View{
                         .font(.headline)
                 }
             }
+            .background(
+                GeometryReader { geometry in
+                    Color.clear
+                        .preference(key: ListWidthPreferenceKey.self, value: geometry.size.width)
+                }
+                    .onPreferenceChange(ListWidthPreferenceKey.self) { listWidth in
+                        self.listWidth = listWidth
+                    }
+            )
             FilterOptionsCell(title: "CATEGORIES",options: categories)
                 .listRowSeparator(.hidden)
-            SliderViewRepresent(screenWidth: screenWidth)
+            SliderViewRepresent(screenWidth: listWidth - 20)
                 .padding(.leading, -10)
 //            SliderViewRepresent()
             FilterOptionsCell(title: "SORT BY", options: sortBy)
@@ -175,9 +157,8 @@ struct FilterOptionListIphone :View{
 
 struct FilterOptionListIphoneLandScape :View{
     
-    @State private var minPrice: Double = 0
-    @State private var maxPrice: Double = 5000
     @Environment(\.presentationMode) var presentationMode
+    @State private var listWidth: CGFloat = 0
     
     
     let categories = ["Acrylic Clocks", "Acrylic Medals", "Banners", "Bookmarks",
@@ -192,11 +173,7 @@ struct FilterOptionListIphoneLandScape :View{
     let color = ["Red","Green","Blue"]
     
     let size = ["Large","Medium","Small"]
-    
-    let screenWidth: CGFloat
-    init(screenWidth: CGFloat) {
-        self.screenWidth = screenWidth
-    }
+ 
     var body: some View {
         List{
             HStack{
@@ -216,11 +193,19 @@ struct FilterOptionListIphoneLandScape :View{
                         .font(.headline)
                 }
             }
+            .background(
+                GeometryReader { geometry in
+                    Color.clear
+                        .preference(key: ListWidthPreferenceKey.self, value: geometry.size.width)
+                }
+                    .onPreferenceChange(ListWidthPreferenceKey.self) { listWidth in
+                        self.listWidth = listWidth
+                    }
+            )
             FilterOptionsCell(title: "CATEGORIES",options: categories)
                 .listRowSeparator(.hidden)
-            SliderViewRepresent(screenWidth: screenWidth )
+            SliderViewRepresent(screenWidth: listWidth - 20)
                 .padding(.leading, -10)
-//            SliderViewRepresent()
             FilterOptionsCell(title: "SORT BY", options: sortBy)
                 .listRowSeparator(.hidden)
             FilterOptionsCell(title: "Type", options: type)
@@ -230,9 +215,15 @@ struct FilterOptionListIphoneLandScape :View{
             FilterOptionsCell(title: "Size", options: size)
                 .listRowSeparator(.hidden)
         }
-        .padding(EdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20))
         .accentColor(.black)
         .listStyle(InsetListStyle())
+    }
+}
+
+struct ListWidthPreferenceKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
     }
 }
 
