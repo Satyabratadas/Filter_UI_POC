@@ -12,8 +12,8 @@ struct PresentFilterView: View {
  
     var body: some View {
             if isCurrentDeviceIpad(){
-                FilterOptionListIphoneLandScape()
-                ApplyBtnViewIphoneLandScape()
+//                FilterOptionListIphoneLandScape()
+//                ApplyBtnViewIphoneLandScape()
                 
             }else{
                 FilterViewForIphone()
@@ -23,26 +23,32 @@ struct PresentFilterView: View {
 
 
 struct FilterViewForIphone: View {
-    @State private var landscapeOrientation = false
-    @State private var sizeChanged = false
-    var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                if geometry.size.width > geometry.size.height{
-                    FilterOptionListIphoneLandScape()
-                    ApplyBtnViewIphoneLandScape()
-                }else{
-                    
-                    FilterOptionListIphone()
-                    ApplyBtnViewIphone()
-                }
-            }
-            .padding(EdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5))
+    
+    var body: some View{
+        FilterOptionListIphone()
         }
         
     }
+//    @State private var landscapeOrientation = false
+//    @State private var sizeChanged = false
+//    var body: some View {
+//        GeometryReader { geometry in
+//            VStack {
+//                if geometry.size.width > geometry.size.height{
+//                    FilterOptionListIphone()
+//                    ApplyBtnViewIphoneLandScape()
+//                }else{
+//                    
+//                    FilterOptionListIphone()
+//                    ApplyBtnViewIphone()
+//                }
+//            }
+//            .padding(EdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5))
+//        }
+//        
+//    }
     
-}
+
 
 struct SizePreferenceKey: PreferenceKey {
     static var defaultValue: CGSize = .zero
@@ -92,7 +98,6 @@ struct ApplyBtnViewIphoneLandScape: View {
 struct FilterOptionListIphone :View{
     
     @Environment(\.presentationMode) var presentationMode
-    @State private var listWidth: CGFloat = 0
     
     let categories = ["Acrylic Clocks", "Acrylic Medals", "Banners", "Bookmarks",
                              "Canvas Photo Frame", "Cap based Lid Water Bottles",
@@ -106,120 +111,104 @@ struct FilterOptionListIphone :View{
     let color = ["Red","Green","Blue"]
     
     let size = ["Large","Medium","Small"] 
+    @State private var screenWidth: CGFloat = 0
+    @State var orientation = UIDeviceOrientation.portrait
+    @State var frame: CGRect = .zero
    
     var body: some View {
-        List{
-            HStack{
-                Text("FILTER")
-                    .font(.title3)
-                Spacer()
-                Button(action: {
-                    print("button pressed")
-                    presentationMode.wrappedValue.dismiss()
-                    
-                }) {
-                    Image(systemName: "xmark")
-                        .resizable()
-                        .colorInvert()
-                        .frame(width: 10,height: 10)
-                        .foregroundColor(.white)
-                        .font(.headline)
-                }
+        GeometryReader{ geometry in
+            let listWidth = geometry.size.width * 0.95 // Calculate list width
+            
+            List {
+                FilterOptionsCell(title: "CATEGORIES", options: categories)
+                    .listRowSeparator(.hidden)
+                
+                SliderViewRepresent(screenWidth: listWidth - 70) // Pass screenWidth as screenWidth
+                    .padding(.leading, -10)
+                
+                FilterOptionsCell(title: "SORT BY", options: sortBy)
+                    .listRowSeparator(.hidden)
+                
+                FilterOptionsCell(title: "Type", options: type)
+                    .listRowSeparator(.hidden)
+                
+                FilterOptionsCell(title: "Color", options: color)
+                    .listRowSeparator(.hidden)
+                
+                FilterOptionsCell(title: "Size", options: size)
+                    .listRowSeparator(.hidden)
             }
-            .background(
-                GeometryReader { geometry in
-                    Color.clear
-                        .preference(key: ListWidthPreferenceKey.self, value: geometry.size.width)
-                }
-                    .onPreferenceChange(ListWidthPreferenceKey.self) { listWidth in
-                        self.listWidth = listWidth
-                    }
-            )
-            FilterOptionsCell(title: "CATEGORIES",options: categories)
-                .listRowSeparator(.hidden)
-            SliderViewRepresent(screenWidth: listWidth - 20)
-                .padding(.leading, -10)
-//            SliderViewRepresent()
-            FilterOptionsCell(title: "SORT BY", options: sortBy)
-                .listRowSeparator(.hidden)
-            FilterOptionsCell(title: "Type", options: type)
-                .listRowSeparator(.hidden)
-            FilterOptionsCell(title: "Color", options: color)
-                .listRowSeparator(.hidden)
-            FilterOptionsCell(title: "Size", options: size)
-                .listRowSeparator(.hidden)
+            .padding(5)
+            .onAppear {
+                screenWidth = listWidth // Set initial screenWidth
+            }
+            .onChange(of: geometry.size) { _ in
+                screenWidth = geometry.size.width * 0.95 // Update screenWidth on orientation change
+            }
+            
+            .frame(width: listWidth)
+            .accentColor(.black)
+            .listStyle(InsetListStyle())
         }
-        .frame(width: UIScreen.screenWidth * 0.95)
-        .accentColor(.black)
-        .listStyle(InsetListStyle())
+//        List{
+//            FilterOptionsCell(title: "CATEGORIES", options: categories)
+//                .listRowSeparator(.hidden)
+//            SliderViewRepresent(screenWidth: 300)
+//                .padding(.leading,-10)
+//            FilterOptionsCell(title: "SORT BY", options: sortBy)
+//                .listRowSeparator(.hidden)
+//            
+//            FilterOptionsCell(title: "Type", options: type)
+//                .listRowSeparator(.hidden)
+//            
+//            FilterOptionsCell(title: "Color", options: color)
+//                .listRowSeparator(.hidden)
+//            
+//            FilterOptionsCell(title: "Size", options: size)
+//                .listRowSeparator(.hidden)
+//            
+//        }.onChangeOrientation { newOrientation in
+//            orientation = newOrientation
+//            frame = UIScreen.main.bounds
+//            print(orientation.rawValue)
+//        }
+       
+//                    let listWidth = geometry.size.width * 0.95 // Calculate list width
+                    
+//                    List {
+//                        FilterOptionsCell(title: "CATEGORIES", options: categories)
+//                            .listRowSeparator(.hidden)
+//                        
+//                        SliderViewRepresent(screenWidth: listWidth - 50) // Pass screenWidth as screenWidth
+//                            .padding(.leading, -10)
+//                        
+//                        FilterOptionsCell(title: "SORT BY", options: sortBy)
+//                            .listRowSeparator(.hidden)
+//                        
+//                        FilterOptionsCell(title: "Type", options: type)
+//                            .listRowSeparator(.hidden)
+//                        
+//                        FilterOptionsCell(title: "Color", options: color)
+//                            .listRowSeparator(.hidden)
+//                        
+//                        FilterOptionsCell(title: "Size", options: size)
+//                            .listRowSeparator(.hidden)
+//                    }
+//                    .padding(5)
+//                    .onAppear {
+//                        screenWidth = listWidth // Set initial screenWidth
+//                    }
+//                    .onChange(of: geometry.size) { _ in
+//                        screenWidth = geometry.size.width * 0.95 // Update screenWidth on orientation change
+//                    }
+                    
+//                    .frame(width: listWidth)
+//                    .accentColor(.black)
+//                    .listStyle(InsetListStyle())
+                
+        
     }
 }
-
-struct FilterOptionListIphoneLandScape :View{
-    
-    @Environment(\.presentationMode) var presentationMode
-    @State private var listWidth: CGFloat = 0
-    
-    
-    let categories = ["Acrylic Clocks", "Acrylic Medals", "Banners", "Bookmarks",
-                             "Canvas Photo Frame", "Cap based Lid Water Bottles",
-                             "Carabiner Water Bottles", "Certificate", "Coasters",
-                          "Coffee Mugs", "Dangler", "Desk Calendars", "Envelope"]
-    
-    let sortBy = ["Price low to high","Price high to low","Added new to old","Added old to new","Alphabetical A-Z","Alphabetical Z-A"]
-    
-    let type = ["Rectangle","Circle","Triangle"]
-    
-    let color = ["Red","Green","Blue"]
-    
-    let size = ["Large","Medium","Small"]
- 
-    var body: some View {
-        List{
-            HStack{
-                Text("FILTER")
-                    .font(.title3)
-                Spacer()
-                Button(action: {
-                    print("button pressed")
-                    presentationMode.wrappedValue.dismiss()
-                    
-                }) {
-                    Image(systemName: "xmark")
-                        .resizable()
-                        .colorInvert()
-                        .frame(width: 10,height: 10)
-                        .foregroundColor(.white)
-                        .font(.headline)
-                }
-            }
-            .background(
-                GeometryReader { geometry in
-                    Color.clear
-                        .preference(key: ListWidthPreferenceKey.self, value: geometry.size.width)
-                }
-                    .onPreferenceChange(ListWidthPreferenceKey.self) { listWidth in
-                        self.listWidth = listWidth
-                    }
-            )
-            FilterOptionsCell(title: "CATEGORIES",options: categories)
-                .listRowSeparator(.hidden)
-            SliderViewRepresent(screenWidth: listWidth - 20)
-                .padding(.leading, -10)
-            FilterOptionsCell(title: "SORT BY", options: sortBy)
-                .listRowSeparator(.hidden)
-            FilterOptionsCell(title: "Type", options: type)
-                .listRowSeparator(.hidden)
-            FilterOptionsCell(title: "Color", options: color)
-                .listRowSeparator(.hidden)
-            FilterOptionsCell(title: "Size", options: size)
-                .listRowSeparator(.hidden)
-        }
-        .accentColor(.black)
-        .listStyle(InsetListStyle())
-    }
-}
-
 struct ListWidthPreferenceKey: PreferenceKey {
     static var defaultValue: CGFloat = 0
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {

@@ -7,57 +7,72 @@
 
 import SwiftUI
 
-struct CheckOrientation: View {
-    @State private var landscapeOrientation = false
-    @State private var sizeChanged = false
+struct OrientationChangeView: View {
+    
+    @State var orientation = UIDeviceOrientation.portrait
+    @State var frame: CGRect = .zero
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                Text("Hello, World!")
-                
-                if landscapeOrientation {
-                    HStack {
-                        Text("This is landscape mode")
-                    }
-                    .padding(20)
-                    .frame(width: geometry.size.width, height: geometry.size.height * 0.2) // Adjust frame for landscape
-                } else {
-                    HStack {
-                        Text("This is portrait mode")
-                    }
-                    .padding(10)
-                    .frame(width: geometry.size.width, height: geometry.size.height * 0.1) // Adjust frame for portrait
+        Group {
+            if orientation.isPortrait {
+                ZStack {
+//                    Color.green.ignoresSafeArea()
+                    Text("Portrait")
+                        .frame(width: UIScreen.screenWidth/2, height: UIScreen.screenHeight/2)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(.white)
+                        .padding(50)
+                }
+            } else if orientation.isLandscape {
+                ZStack {
+//                    Color.cyan.ignoresSafeArea()
+                    Text("Landscape")
+                        .frame(width: UIScreen.screenWidth/2, height: UIScreen.screenHeight/2)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(.white)
+                        .padding(50)
+                }
+            } else if orientation.isFlat {
+                ZStack {
+                    Color.blue.ignoresSafeArea()
+                        .frame(width: UIScreen.main.bounds.size.width/2, height: UIScreen.main.bounds.size.height/2)
                 }
             }
-            .onAppear {
-                landscapeOrientation = geometry.size.width > geometry.size.height
-            }
-            //
-            .background(
-                // Use background to track size change
-                GeometryReader { geo in
-                    Color.clear
-                        .preference(key: SizePreferenceKeyTest.self, value: geo.size)
+            else {
+                ZStack {
+                    Color.yellow.ignoresSafeArea()
+                        .frame(width: UIScreen.main.bounds.size.width/2, height: UIScreen.main.bounds.size.height/2)
                 }
-            )
-            .onPreferenceChange(SizePreferenceKeyTest.self) { size in
-                // React to size changes
-                landscapeOrientation = size.width > size.height
-                sizeChanged.toggle()
             }
+        }
+        .onChangeOrientation { newOrientation in
+            orientation = newOrientation
+            frame = UIScreen.main.bounds
+            print(orientation.rawValue)
         }
     }
 }
 
-struct SizePreferenceKeyTest: PreferenceKey {
-    static var defaultValue: CGSize = .zero
+struct OrientationViewModifier: ViewModifier {
     
-    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
-        value = nextValue()
+    let action: (UIDeviceOrientation) ->()
+    func body(content: Content) -> some View {
+        content
+            .onAppear()
+            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification), perform: { _ in
+                action(UIDevice.current.orientation)
+            })
     }
 }
 
-#Preview {
-    CheckOrientation()
+extension View {
+    func onChangeOrientation(perform action: @escaping(UIDeviceOrientation)->()) -> some View {
+        self
+            .modifier(OrientationViewModifier(action: action))
+    }
 }
+
+
+//#Preview {
+////    OrientationChangeView()
+//}
