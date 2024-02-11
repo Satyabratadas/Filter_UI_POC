@@ -20,6 +20,7 @@
 		0B5046C22B6BD1F100E9E87E /* CheckOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5046C12B6BD1F100E9E87E /* CheckOrientation.swift */; };
 		0B5046C42B6CF39100E9E87E /* TwoRangeSliderWithOriantation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5046C32B6CF39100E9E87E /* TwoRangeSliderWithOriantation.swift */; };
 		A388B4D32B67DA2F00103176 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388B4D22B67DA2F00103176 /* TextFieldView.swift */; };
+		A388B5452B79693600103176 /* SliderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388B5442B79693600103176 /* SliderTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		0B5046C12B6BD1F100E9E87E /* CheckOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOrientation.swift; sourceTree = "<group>"; };
 		0B5046C32B6CF39100E9E87E /* TwoRangeSliderWithOriantation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoRangeSliderWithOriantation.swift; sourceTree = "<group>"; };
 		A388B4D22B67DA2F00103176 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		A388B5442B79693600103176 /* SliderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		0B11D9442B5E8E93004E663A = {
 			isa = PBXGroup;
 			children = (
+				A388B5442B79693600103176 /* SliderTest.swift */,
 				0B5046B52B692B8500E9E87E /* Constant_file.swift */,
 				A388B4D22B67DA2F00103176 /* TextFieldView.swift */,
 				0B11D94F2B5E8E93004E663A /* Filter_UI_Dummy_SwiftUI */,
@@ -174,6 +177,7 @@
 				0B11D96F2B5FFD0C004E663A /* Common_UserInterface.swift in Sources */,
 				0B5046BE2B6A6E5300E9E87E /* SliderViewRepresent.swift in Sources */,
 				0B11D9512B5E8E93004E663A /* Filter_UI_Dummy_SwiftUIApp.swift in Sources */,
+				A388B5452B79693600103176 /* SliderTest.swift in Sources */,
 				0B5046B62B692B8500E9E87E /* Constant_file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

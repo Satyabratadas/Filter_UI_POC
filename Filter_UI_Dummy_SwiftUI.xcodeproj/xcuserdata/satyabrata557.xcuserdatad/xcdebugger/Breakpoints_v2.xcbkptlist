@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CE4E5856-82FD-4709-B90B-A1DA4A94C1DB"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA3D25A9-35C5-4D0A-B761-91BF5F3287C8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Filter_UI_Dummy_SwiftUI/TwoRangeSliderWithOriantation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "init(screenWidth:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA7A0E20-B938-4CD8-9E2F-09B8F4945FC0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Filter_UI_Dummy_SwiftUI/TwoRangeSliderWithOriantation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4336D73-0A66-4CE3-97BB-272F6B350084"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Filter_UI_Dummy_SwiftUI/TwoRangeSliderWithOriantation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "TwoRangeSliderWithOriantation"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "C4336D73-0A66-4CE3-97BB-272F6B350084 - df6a3f637460fc09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Filter_UI_Dummy_SwiftUI.SliderViewRepresent.body.getter : some"
+                  moduleName = "Filter_UI_Dummy_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satyabrata557/Documents/Swift_UI_Practice/Filter_UI_Dummy_SwiftUI/Filter_UI_Dummy_SwiftUI/TwoRangeSliderWithOriantation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  uuid = "C4336D73-0A66-4CE3-97BB-272F6B350084 - bc5a7af10c1cde78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (CoreGraphics.CGFloat) -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;Filter_UI_Dummy_SwiftUI.TwoRangeSliderWithOriantation, Filter_UI_Dummy_SwiftUI.TwoRangeSliderWithOriantation&gt; in Filter_UI_Dummy_SwiftUI.SliderViewRepresent.body.getter : some"
+                  moduleName = "Filter_UI_Dummy_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satyabrata557/Documents/Swift_UI_Practice/Filter_UI_Dummy_SwiftUI/Filter_UI_Dummy_SwiftUI/TwoRangeSliderWithOriantation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

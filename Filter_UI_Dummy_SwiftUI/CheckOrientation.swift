@@ -16,8 +16,8 @@ struct OrientationChangeView: View {
         Group {
             if orientation.isPortrait {
                 ZStack {
-//                    Color.green.ignoresSafeArea()
-                    Text("Portrait")
+                    Color.green.ignoresSafeArea()
+                    Text("Portrait \(frame.width),\(UIScreen.screenWidth)")
                         .frame(width: UIScreen.screenWidth/2, height: UIScreen.screenHeight/2)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(.white)
@@ -25,8 +25,8 @@ struct OrientationChangeView: View {
                 }
             } else if orientation.isLandscape {
                 ZStack {
-//                    Color.cyan.ignoresSafeArea()
-                    Text("Landscape")
+                    Color.cyan.ignoresSafeArea()
+                    Text("Landscape \(frame.width), \(UIScreen.screenWidth)")
                         .frame(width: UIScreen.screenWidth/2, height: UIScreen.screenHeight/2)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(.white)
