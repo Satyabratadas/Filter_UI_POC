@@ -81,6 +81,96 @@
                   endingLineNumber = "30"
                   offsetFromSymbolStart = "76">
                </Location>
+               <Location
+                  uuid = "C4336D73-0A66-4CE3-97BB-272F6B350084 - d21eaddf0abb6439"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Filter_UI_Dummy_SwiftUI.TwoRangeSliderWithOriantation.slider : Filter_UI_Dummy_SwiftUI.CustomSlider"
+                  moduleName = "Filter_UI_Dummy_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satyabrata557/Documents/Swift_UI_Practice/Filter_UI_Dummy_SwiftUI/Filter_UI_Dummy_SwiftUI/TwoRangeSliderWithOriantation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "C4336D73-0A66-4CE3-97BB-272F6B350084 - b02ae10be1eeed92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Filter_UI_Dummy_SwiftUI.TwoRangeSliderWithOriantation.slider.getter : Filter_UI_Dummy_SwiftUI.CustomSlider"
+                  moduleName = "Filter_UI_Dummy_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satyabrata557/Documents/Swift_UI_Practice/Filter_UI_Dummy_SwiftUI/Filter_UI_Dummy_SwiftUI/TwoRangeSliderWithOriantation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "C4336D73-0A66-4CE3-97BB-272F6B350084 - 39aaee2b7ffcdda4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Filter_UI_Dummy_SwiftUI.TwoRangeSliderWithOriantation.slider.setter : Filter_UI_Dummy_SwiftUI.CustomSlider"
+                  moduleName = "Filter_UI_Dummy_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satyabrata557/Documents/Swift_UI_Practice/Filter_UI_Dummy_SwiftUI/Filter_UI_Dummy_SwiftUI/TwoRangeSliderWithOriantation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "C4336D73-0A66-4CE3-97BB-272F6B350084 - 58bc73db492650b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Filter_UI_Dummy_SwiftUI.TwoRangeSliderWithOriantation.slider.modify : Filter_UI_Dummy_SwiftUI.CustomSlider"
+                  moduleName = "Filter_UI_Dummy_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satyabrata557/Documents/Swift_UI_Practice/Filter_UI_Dummy_SwiftUI/Filter_UI_Dummy_SwiftUI/TwoRangeSliderWithOriantation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "C4336D73-0A66-4CE3-97BB-272F6B350084 - 9e946138ef5c2c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Filter_UI_Dummy_SwiftUI.TwoRangeSliderWithOriantation.slider.modify : Filter_UI_Dummy_SwiftUI.CustomSlider with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Filter_UI_Dummy_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satyabrata557/Documents/Swift_UI_Practice/Filter_UI_Dummy_SwiftUI/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "C4336D73-0A66-4CE3-97BB-272F6B350084 - 4cac1812e17727a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Filter_UI_Dummy_SwiftUI.TwoRangeSliderWithOriantation.$slider.getter : SwiftUI.ObservedObject&lt;Filter_UI_Dummy_SwiftUI.CustomSlider&gt;.Wrapper"
+                  moduleName = "Filter_UI_Dummy_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satyabrata557/Documents/Swift_UI_Practice/Filter_UI_Dummy_SwiftUI/Filter_UI_Dummy_SwiftUI/TwoRangeSliderWithOriantation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "0">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

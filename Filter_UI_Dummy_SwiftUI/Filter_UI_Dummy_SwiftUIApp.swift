@@ -11,7 +11,7 @@ import SwiftUI
 struct Filter_UI_Dummy_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SliderTest()
         }
     }
 }
